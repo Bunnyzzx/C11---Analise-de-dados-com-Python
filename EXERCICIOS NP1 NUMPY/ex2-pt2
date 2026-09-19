@@ -1,0 +1,41 @@
+import numpy as np
+
+arr0 = np.zeros([3,3])
+x = np.random.randint(0,3)
+y = np.random.randint(0,3)
+
+arr0[x,y] = 1
+print(x,y)
+
+
+condicao = True
+jogadas = 8
+while condicao == True:
+    print('')
+    print(f'Voce ainda tem {jogadas} jogadas possiveis')
+    l = int(input('Digite a linha que ira jogar: '))
+    c = int(input('Digite a coluna que ira jogar: '))
+
+    if arr0[l,c] == 1:
+        print('')
+        print('Perdeuuu')
+        condicao = False
+
+    elif arr0[l,c] == 2:
+        print('')
+        print('Ja foi ai bobao kkk')
+
+    else:
+        arr0[l,c] = 2
+        jogadas = jogadas-1
+        print('')
+        print(arr0)
+        print('boa jogada!')
+
+    if jogadas == 0:
+        print('')
+        print('Parabens! Voce ganhou!')
+        condicao = 0
+
+
+
